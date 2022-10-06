@@ -1,5 +1,5 @@
 import { TestScheduler } from 'jest'
-import { vowelCounter, diphthongCounter, silentVowelCounter, syllableCounter  } from '../src/haikuCheck.js'
+import { vowelCounter, diphthongCounter, silentVowelCounter, syllableCounter, haikuChecker  } from '../src/haikuCheck.js'
 
 describe ('vowelCounter', () => {
   test('should return the number of vowels in a string', () => {
@@ -24,3 +24,12 @@ describe ('syllableCounter', () => {
     expect(syllableCounter("This is a great test")).toEqual(5);
   });
 });
+
+describe ('haikuChecker', () => {
+  test('should return true or false if the poem is a haiku', () => {
+    const line1 = "This is a great test";
+    const line2 = "I cant make it work well though";
+    const line3 = "Can you make poem"; 
+    expect(haikuChecker(line1, line2, line3)).toEqual(true);
+  })
+})

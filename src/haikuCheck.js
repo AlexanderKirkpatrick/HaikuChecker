@@ -18,3 +18,10 @@ export const silentVowelCounter = (string) => {
 export const syllableCounter = (string) => {
   return vowelCounter(string) - diphthongCounter(string) - silentVowelCounter(string);
 };
+
+export const haikuChecker = (line1, line2, line3) => {
+  const line1Checker = syllableCounter(line1);
+  const line2Checker = syllableCounter(line2);
+  const line3Checker = syllableCounter(line3);
+  return line1Checker === 5 && line2Checker === 7 && line3Checker === 5;
+};
