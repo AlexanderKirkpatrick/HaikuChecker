@@ -14,3 +14,7 @@ export const silentVowelCounter = (string) => {
   const silentI = (/business/gi).test(string) ? string.match(/business/gi).length : 0;
   return silentA + silentE + silentED + silentU + silentI;
 };
+
+export const syllableCounter = (string) => {
+  return vowelCounter(string) - diphthongCounter(string) - silentVowelCounter(string);
+};
